@@ -10,7 +10,7 @@ A collection of my n8n automation and workflow projects.
 
 
 
-\### 02. Save Student Data into MySQL
+\### 02-Save Student Data into MySQL
 
 
 
