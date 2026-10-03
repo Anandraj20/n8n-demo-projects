@@ -1,0 +1,389 @@
+{
+  "name": "Student Department Routing",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2d1db48c-0ea5-435a-b843-eff6d329ea7b",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "94408b4a-ae07-41e8-8a86-75d79aee4a2b",
+              "name": "name",
+              "value": "Anand",
+              "type": "string"
+            },
+            {
+              "id": "b335ef8e-dafc-4262-9698-8870b5bb49a3",
+              "name": "department",
+              "value": "IT",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        -144
+      ],
+      "id": "1a8e8977-a1ec-496d-9781-fca7e1f0ef86",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.department }}",
+                    "rightValue": "IT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "976b7d89-d334-46e2-8b19-ba989b9bca95"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "c0dc7aff-231f-47d3-ae7e-5e1a96975c02",
+                    "leftValue": "={{ $json.body.department }}",
+                    "rightValue": "MECH",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "6217f5e3-c996-4e0f-986a-dad793ecfb34",
+                    "leftValue": "={{ $json.body.department }}",
+                    "rightValue": "ECE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "99d38581-484f-46b0-bee3-60185fd66655",
+                    "leftValue": "={{ $json.body.department }}",
+                    "rightValue": "CSE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "53324839-c0fd-48e4-9ae6-1fb30439afaa",
+                    "leftValue": "={{ $json.body.department }}",
+                    "rightValue": "EEE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "ddf549e1-6cda-4135-8a33-9bada7947330",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2c66fb01-76fa-4cfd-8249-b09a633f8dda",
+              "name": "Message",
+              "value": "=Student belongs to {{ $json.department }} department",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        656,
+        -272
+      ],
+      "id": "7f4058b4-98c6-4866-b878-09b78ae0827a",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2c66fb01-76fa-4cfd-8249-b09a633f8dda",
+              "name": "Message",
+              "value": "=Student belongs to {{ $json.department }} department",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        656,
+        -96
+      ],
+      "id": "d64893bd-9fe3-4cd6-a7d1-a46107a51ae4",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2c66fb01-76fa-4cfd-8249-b09a633f8dda",
+              "name": "Message",
+              "value": "=Student belongs to {{ $json.department }} department",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        656,
+        64
+      ],
+      "id": "9538b6af-ecf7-401c-b550-858e5b7a51dc",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2c66fb01-76fa-4cfd-8249-b09a633f8dda",
+              "name": "Message",
+              "value": "=Student belongs to {{ $json.department }} department",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        656,
+        224
+      ],
+      "id": "2a6834b7-07db-4ab6-bcb6-e057f127d344",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2c66fb01-76fa-4cfd-8249-b09a633f8dda",
+              "name": "Message",
+              "value": "=Student belongs to {{ $json.department }} department",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        656,
+        400
+      ],
+      "id": "e6b3bbd5-2324-4cad-a5c6-6538544fb475",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "student",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -16,
+        160
+      ],
+      "id": "76e44fc7-8d3f-43ef-ae27-fcf3cc1a7617",
+      "name": "Webhook",
+      "webhookId": "f4dcf463-9c81-4328-9b75-da484bffdc6f"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "944c3b06-8ba6-410f-ab66-b44e8cb72d55",
+  "meta": {
+    "instanceId": "a734e90a76bcbf818de77948e42a4b15f4dd8ab110a6daaef842c6e10a6d2c6e"
+  },
+  "id": "TrmYKtN1otB8iwi0",
+  "tags": []
+}
